@@ -94,35 +94,37 @@ char *termname = "st";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#3b4252", /* black   */
-	"#bf616a", /* red     */
-	"#a3be8c", /* green   */
-	"#ebcb8b", /* yellow  */
-	"#81a1c1", /* blue    */
-	"#b48ead", /* magenta */
-	"#88c0d0", /* cyan    */
-	"#e5e9f0", /* white   */
+	[0] = "#000000",
+	[1] = "#9f0000",
+	[2] = "#008b00",
+	[3] = "#ffcf00",
+	[4] = "#0081ff",
+	[5] = "#bc00ca",
+	[6] = "#008b8b",
+	[7] = "#bbbbbb",
 
 	/* 8 bright colors */
-	"#4c566a", /* black   */
-	"#bf616a", /* red     */
-	"#a3be8c", /* green   */
-	"#ebcb8b", /* yellow  */
-	"#81a1c1", /* blue    */
-	"#b48ead", /* magenta */
-	"#8fbcbb", /* cyan    */
-	"#eceff4", /* white   */
+	[8] = "#545454",
+	[9] = "#ff0000",
+	[10] = "#00ee00",
+	[11] = "#ffff00",
+	[12] = "#0000ff",
+	[13] = "#ff00ff",
+	[14] = "#00cdcd",
+	[15] = "#ffffff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#d8dee9", /* default foreground colour */
-	"#2e3440", /* default background colour */
+	"#bbbbbb",
+	"#555555",
+	"#ffffff", /* default foreground colour */
+	"#000000", /* default background colour */
 };
 
 
@@ -130,11 +132,9 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 256;
-unsigned int defaultbg = 257;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
-unsigned int selectionbg = 0;
-unsigned int selectionfg = 256;
 static unsigned int defaultrcs = 257;
 
 /*
